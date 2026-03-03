@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AraE — Monde</title>
+  <meta name="description" content="Module Monde : référentiel global non versionné, consolidation et comparaison des versions issues des sessions." />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+</head>
+<body data-theme="green">
+  <a class="skip-link" href="#content">Aller au contenu</a>
+
+  <header class="topbar" data-elevate>
+    <div class="container topbar__inner">
+      <a class="brand" href="/" aria-label="AraE">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__text">
+          <span class="brand__name">AraE</span>
+          <span class="brand__meta">Monde</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="/">Accueil</a>
+        <a class="nav__link nav__link--cta" href="/#beta">Bêta</a>
+      </nav>
+
+      <button class="navbtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav" data-navbtn>
+        <span class="navbtn__bar"></span><span class="navbtn__bar"></span><span class="navbtn__bar"></span>
+      </button>
+    </div>
+
+    <div id="mobile-nav" class="mobile" data-mobile>
+      <div class="container mobile__inner">
+        <a class="mobile__link" href="/">Accueil</a>
+        <a class="mobile__link mobile__link--cta" href="/#beta">Bêta (Windows)</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero hero--module">
+      <div class="container">
+        <div class="badges" aria-label="Badges">
+          <span class="badge">Monde</span>
+          <span class="badge">Référentiel</span>
+          <span class="badge">Comparaison</span>
+        </div>
+
+        <h1 class="hero__title">Monde — vision macro, référentiel consolidé</h1>
+        <p class="hero__lead">
+          Le module Monde regroupe les entités globales (non versionnées) et récupère l’historique issu des sessions pour comparer,
+          analyser et consolider.
+        </p>
+
+        <div class="video">
+          <div class="video__frame" role="img" aria-label="Emplacement vidéo : trailer Monde (16:9)">
+            <div class="video__placeholder">
+              <div class="video__title">Trailer (à ajouter)</div>
+              <div class="video__meta">Format recommandé : 1920×1080 (16:9)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Fonctionnement</h2>
+          <p class="sub">Consolidation, comparaison, et lecture “globale” de l’univers.</p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 class="h3">Référentiel non versionné</h3>
+            <p class="p">Entités “stables” du monde : base de référence pour tout le reste.</p>
+            <div class="tags">
+              <span class="tag">Référentiel</span>
+              <span class="tag">Organisation</span>
+              <span class="tag">Consistance</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="h3">Comparaison inter-sessions</h3>
+            <p class="p">Comparer les versions issues des sessions pour suivre l’évolution.</p>
+            <div class="tags">
+              <span class="tag">Comparaison</span>
+              <span class="tag">Historique</span>
+              <span class="tag">Analyse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout__title">Objectif</div>
+          <div class="callout__text">Passer d’une lecture “session” à une lecture “univers” sans perdre la trace des changements.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--beta">
+      <div class="container">
+        <div class="callout">
+          <div class="callout__title">Accès bêta</div>
+          <div class="callout__text">Inscription sur l’accueil pour être notifié des releases Windows.</div>
+          <div style="margin-top:12px;">
+            <a class="btn btn--primary" href="/#beta">Aller à la bêta</a>
+            <a class="btn btn--secondary" href="/">Retour accueil</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">AraE</div>
+        <div class="footer__meta">© 2026 — Monde</div>
+      </div>
+      <div class="footer__right">
+        <a class="link" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
+        <a class="link" href="/">Accueil</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
