@@ -11,185 +11,390 @@
   <meta property="og:description" content="Notes en session, structuration après. Sessions / Monde / Règles / MJ." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://arae.netlify.app/" />
+  <meta name="theme-color" content="#0b0f14" />
 
-  <meta name="theme-color" content="#0e1117" />
-  <link rel="stylesheet" href="/styles.css">
+  <!-- Favicon (optionnel)
+  <link rel="icon" href="/favicon.ico" />
+  -->
+
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/utilities.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <a class="skip-link" href="#content">Aller au contenu</a>
 
-  <header>
-    <div class="wrap nav">
+  <header class="topbar" data-elevate>
+    <div class="container topbar__inner">
       <a class="brand" href="#top" aria-label="AraE">
-        AraE <small>Journal JDR</small>
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__text">
+          <span class="brand__name">AraE</span>
+          <span class="brand__meta">Journal JDR</span>
+        </span>
       </a>
-      <nav aria-label="Navigation principale">
-        <ul>
-          <li><a href="#how">Workflow</a></li>
-          <li><a href="#modules">Modules</a></li>
-          <li><a href="#installation">Installation</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#suivre">Bêta</a></li>
-        </ul>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="#workflow">Workflow</a>
+        <a class="nav__link" href="#modules">Modules</a>
+        <a class="nav__link" href="#installation">Installation</a>
+        <a class="nav__link" href="#faq">FAQ</a>
+        <a class="nav__link nav__link--cta" href="#beta">Bêta</a>
       </nav>
+
+      <button class="navbtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-navbtn>
+        <span class="navbtn__bar"></span>
+        <span class="navbtn__bar"></span>
+        <span class="navbtn__bar"></span>
+      </button>
+    </div>
+
+    <div class="mobile" data-mobile>
+      <div class="container mobile__inner">
+        <a class="mobile__link" href="#workflow">Workflow</a>
+        <a class="mobile__link" href="#modules">Modules</a>
+        <a class="mobile__link" href="#installation">Installation</a>
+        <a class="mobile__link" href="#faq">FAQ</a>
+        <a class="mobile__link mobile__link--cta" href="#beta">Bêta (Windows)</a>
+      </div>
     </div>
   </header>
 
-  <div id="top" class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <div class="pillrow">
-          <div class="pill">Windows (alpha)</div>
-          <div class="pill">Joueurs & MJ</div>
-          <div class="pill">Session → Structuration</div>
-        </div>
+  <main id="content">
+    <section id="top" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <div class="badges" aria-label="Badges">
+            <span class="badge">Windows (alpha)</span>
+            <span class="badge">Joueurs & MJ</span>
+            <span class="badge">Notes → Entités</span>
+          </div>
 
-        <h1>AraE — le journal numérique pour suivre une campagne JDR</h1>
-        <p class="lead">
-          Pendant la session : tu notes. Après la session : tu distribues l’information en PNJ, lieux, factions, monstres et chroniques,
-          avec séparation claire entre <strong>Session</strong> (connaissance instant T) et <strong>Monde</strong> (référentiel global).
-        </p>
+          <h1 class="hero__title">
+            Suivez une campagne JDR<br class="hide-sm" />
+            sans perdre l’information.
+          </h1>
 
-        <div class="cta">
-          <a class="btn primary" href="#beta-email">Être notifié de la bêta (Windows)</a>
-          <a class="btn secondary" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">Voir sur GitHub</a>
-        </div>
-
-        <div class="note">
-          Pas de spam. Notification uniquement lors des releases importantes.
-        </div>
-      </div>
-
-      <aside class="panel">
-        <div class="shot">
-          Capture d’écran à ajouter
-          <small>Format recommandé : 1600×1000</small>
-        </div>
-        <div class="panel-body">
-          Une capture produit augmentera fortement la crédibilité.
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <main id="contenu" class="wrap">
-
-    <section id="how">
-      <h2>Comment ça marche</h2>
-      <p class="sub">Un workflow simple et structuré.</p>
-      <div class="grid">
-        <div class="card span-4">
-          <h3>1) Créer une session</h3>
-          <p>Point de départ chronologique de l’aventure.</p>
-        </div>
-        <div class="card span-4">
-          <h3>2) Prendre des notes</h3>
-          <p>Notes mobiles pendant la partie, sans casser le rythme.</p>
-        </div>
-        <div class="card span-4">
-          <h3>3) Structurer</h3>
-          <p>Distribution en entités versionnées et référentiel monde.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="modules">
-      <h2>Les 4 modules</h2>
-      <p class="sub">Organisation claire selon rôle et besoin.</p>
-
-      <div class="grid">
-        <div class="card span-6">
-          <h3>Sessions</h3>
-          <p>Journal + entités versionnées liées à la chronologie.</p>
-        </div>
-        <div class="card span-6">
-          <h3>Règles</h3>
-          <p>Import, modification ou création complète de systèmes JDR.</p>
-        </div>
-        <div class="card span-6">
-          <h3>Monde</h3>
-          <p>Référentiel global et comparaison inter-sessions.</p>
-        </div>
-        <div class="card span-6">
-          <h3>MJ</h3>
-          <p>Stat blocks, équilibrage et estimation de puissance.</p>
-        </div>
-      </div>
-
-      <div class="card span-12">
-        <h3>Entités disponibles</h3>
-        <p>
-          PNJ, Monstres, Religions, Factions, Lieux, Notes, Chronique,
-          et <strong>Carte</strong> (tokens, tracés mesurables, zones d’influence, annotations).
-        </p>
-      </div>
-    </section>
-
-    <section id="installation">
-      <h2>Installation Windows</h2>
-      <p class="sub">Processus clair et minimal.</p>
-
-      <div class="cols">
-        <div class="card">
-          <h3>Étapes</h3>
-          <ol>
-            <li>Télécharger l’installeur (GitHub Releases recommandé).</li>
-            <li>Exécuter le fichier (.exe / .msi).</li>
-            <li>Lancer AraE.</li>
-          </ol>
-        </div>
-
-        <div class="card">
-          <h3>Distribution</h3>
-          <p>GitHub Releases garantit versioning clair et traçabilité.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Session vs Monde ?</summary>
-        <p>Session = versionnée et chronologique. Monde = base globale consolidée.</p>
-      </details>
-
-      <details>
-        <summary>Données stockées où ?</summary>
-        <p>Stockage local. Synchronisation future possible.</p>
-      </details>
-
-      <details>
-        <summary>Support OS ?</summary>
-        <p>Windows d’abord. Extensions futures selon maturité.</p>
-      </details>
-    </section>
-
-    <section id="suivre">
-      <h2>Suivre la bêta</h2>
-      <div class="card">
-        <form class="form" name="beta" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="beta" />
-          <p style="display:none">
-            <label>Ne pas remplir: <input name="bot-field" /></label>
+          <p class="hero__lead">
+            Pendant la session : <strong>notes rapides</strong>. Après la session : <strong>structuration</strong> en PNJ, lieux, factions,
+            monstres et chroniques — avec une séparation claire entre <strong>Session</strong> (instant T) et <strong>Monde</strong> (référentiel global).
           </p>
-          <input id="beta-email" type="email" name="email" placeholder="Email" required />
-          <button class="btn primary" type="submit">Recevoir une alerte</button>
-        </form>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#beta-email">
+              Être notifié de la bêta (Windows)
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </a>
+
+            <a class="btn btn--secondary" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">
+              Voir sur GitHub
+              <span class="btn__icon" aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="fineprint">
+            Pas de spam. Notification uniquement lors des releases importantes.
+          </div>
+
+          <div class="proof">
+            <div class="proof__item">
+              <div class="proof__kpi">4</div>
+              <div class="proof__label">Modules</div>
+            </div>
+            <div class="proof__item">
+              <div class="proof__kpi">1</div>
+              <div class="proof__label">OS cible (Windows)</div>
+            </div>
+            <div class="proof__item">
+              <div class="proof__kpi">∞</div>
+              <div class="proof__label">Campagnes</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__panel" aria-label="Aperçu produit">
+          <div class="panel">
+            <div class="panel__top">
+              <div class="panel__title">Aperçu</div>
+              <div class="panel__meta">Capture bientôt</div>
+            </div>
+
+            <div class="preview">
+              <div class="preview__placeholder">
+                <div class="preview__mark" aria-hidden="true"></div>
+                <div>
+                  <div class="preview__h">Ajoute une capture quand possible</div>
+                  <div class="preview__p">Format recommandé : 1600×1000 (16:10)</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel__body">
+              <div class="checklist">
+                <div class="checklist__item">
+                  <span class="check" aria-hidden="true">✓</span>
+                  <span>Workflow “session → structuration”</span>
+                </div>
+                <div class="checklist__item">
+                  <span class="check" aria-hidden="true">✓</span>
+                  <span>Versioning des découvertes</span>
+                </div>
+                <div class="checklist__item">
+                  <span class="check" aria-hidden="true">✓</span>
+                  <span>Carte : tokens, tracés, zones</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
+    <section id="workflow" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Workflow</h2>
+          <p class="sub">
+            Un flux simple : capturer pendant la partie, consolider ensuite — sans friction.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="card card--step">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10v10H7V7Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M5 5h14v14H5V5Z" stroke="currentColor" stroke-width="1.7" opacity=".45"/>
+              </svg>
+            </div>
+            <h3 class="h3">1) Créer une session</h3>
+            <p class="p">Point de départ chronologique : ce que le groupe sait, à cet instant.</p>
+          </article>
+
+          <article class="card card--step">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M7 17l10-10" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M7 7h6v6H7V7Z" stroke="currentColor" stroke-width="1.7" opacity=".55"/>
+                <path d="M11 11h6v6h-6v-6Z" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+            </div>
+            <h3 class="h3">2) Noter sans casser le rythme</h3>
+            <p class="p">Notes mobiles pendant la session, puis tri post-partie.</p>
+          </article>
+
+          <article class="card card--step">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M8 7h8M8 12h8M8 17h6" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M6 5h12v14H6V5Z" stroke="currentColor" stroke-width="1.7" opacity=".5"/>
+              </svg>
+            </div>
+            <h3 class="h3">3) Structurer en entités</h3>
+            <p class="p">PNJ, lieux, factions, monstres, chroniques, carte… avec versioning.</p>
+          </article>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 class="h3">Session = connaissance instant T</h3>
+            <p class="p">
+              Les entités versionnées reflètent ce qui a été découvert à un moment précis de l’histoire.
+            </p>
+            <div class="tags">
+              <span class="tag">Chronologie</span>
+              <span class="tag">Versioning</span>
+              <span class="tag">Notes → Entités</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Monde = référentiel global</h3>
+            <p class="p">
+              Base consolidée non versionnée + comparaison inter-sessions pour analyser l’évolution.
+            </p>
+            <div class="tags">
+              <span class="tag">Référentiel</span>
+              <span class="tag">Comparaison</span>
+              <span class="tag">Vue d’ensemble</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="modules" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Modules</h2>
+          <p class="sub">Un point d’entrée clair selon le besoin : joueur, MJ, ou gestion de règles.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <h3 class="h3">Sessions</h3>
+            <p class="p">Journal + entités versionnées liées à la progression.</p>
+            <div class="tags">
+              <span class="tag">Journal</span>
+              <span class="tag">Découvertes</span>
+              <span class="tag">Notes</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">Règles</h3>
+            <p class="p">Import, modification ou création de systèmes JDR (homebrew inclus).</p>
+            <div class="tags">
+              <span class="tag">Import</span>
+              <span class="tag">Homebrew</span>
+              <span class="tag">Accès rapide</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">Monde</h3>
+            <p class="p">Référentiel global et comparaison des versions issues des sessions.</p>
+            <div class="tags">
+              <span class="tag">Référentiel</span>
+              <span class="tag">Comparaison</span>
+              <span class="tag">Consolidation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 class="h3">MJ</h3>
+            <p class="p">Stat blocks, équilibrage, estimation de puissance (modifié / homebrew).</p>
+            <div class="tags">
+              <span class="tag">Équilibrage</span>
+              <span class="tag">Stat blocks</span>
+              <span class="tag">Analyse</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="callout__title">Entités disponibles</div>
+          <div class="callout__text">
+            PNJ, Monstres, Religions, Factions, Lieux, Notes, Chronique,
+            <strong>Carte</strong> (tokens, tracés mesurables, zones d’influence, annotations).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="installation" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Installation Windows</h2>
+          <p class="sub">Objectif : clair et minimal, compatible avec une distribution via GitHub Releases.</p>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 class="h3">Étapes</h3>
+            <ol class="list">
+              <li>Télécharger l’installeur (Release GitHub recommandée).</li>
+              <li>Exécuter le fichier (.exe / .msi).</li>
+              <li>Lancer AraE.</li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Distribution (recommandée)</h3>
+            <p class="p">
+              GitHub Releases garantit un versioning clair, un changelog, et un lien “latest” stable.
+              Quand l’installeur existe, le bouton principal pointera directement vers la dernière release.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">FAQ</h2>
+          <p class="sub">Réponses aux questions qui bloquent l’adoption.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Session vs Monde : quelle différence concrète ?</summary>
+            <div class="faq__body">
+              Session = versionnée et chronologique (instant T). Monde = référentiel consolidé + comparaison des versions.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Où sont stockées les données ?</summary>
+            <div class="faq__body">
+              Stockage local (offline-first). La synchronisation multi-machines peut venir ensuite selon la roadmap.
+            </div>
+          </details>
+
+          <details class="faq__item">
+            <summary>Pourquoi Windows d’abord ?</summary>
+            <div class="faq__body">
+              Priorité à une première distribution stable et une boucle de feedback courte avant extension à d’autres OS.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="beta" class="section section--beta">
+      <div class="container">
+        <div class="beta">
+          <div class="beta__copy">
+            <h2 class="h2">Recevoir l’accès bêta</h2>
+            <p class="sub">Tu seras notifié dès qu’une release Windows installable est publiée.</p>
+          </div>
+
+          <div class="beta__card">
+            <form class="form" name="beta" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="beta" />
+              <p class="sr-only">
+                <label>Ne pas remplir : <input name="bot-field" /></label>
+              </p>
+
+              <label class="label" for="beta-email">Email</label>
+              <div class="form__row">
+                <input id="beta-email" class="input" type="email" name="email" placeholder="toi@exemple.com" autocomplete="email" required />
+                <button class="btn btn--primary" type="submit">Recevoir une alerte</button>
+              </div>
+
+              <div class="fineprint">
+                En soumettant ce formulaire, tu acceptes d’être contacté uniquement pour les releases AraE.
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="footlinks">
+          <a class="link" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">Repo site</a>
+          <span class="dot" aria-hidden="true">•</span>
+          <a class="link" href="#top">Retour en haut</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="wrap foot">
-      <div>© 2026 AraE</div>
-      <div>
-        <a href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
-        <a href="#top">Haut</a>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">AraE</div>
+        <div class="footer__meta">© 2026 — Journal numérique interactif JDR</div>
+      </div>
+      <div class="footer__right">
+        <a class="link" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
+        <a class="link" href="#top">Haut</a>
       </div>
     </div>
   </footer>
 
+  <script src="/js/main.js"></script>
 </body>
 </html>
