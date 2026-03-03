@@ -568,3 +568,91 @@
 @media (max-width: 940px){
   .hide-sm{ display: none; }
 }
+
+/* =========================
+   Modules tiles (clickable)
+   ========================= */
+.card--module{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* top accent bar */
+.card--module::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  height: 3px;
+  width:100%;
+  background: linear-gradient(90deg, var(--m-accent2), var(--m-accent));
+  opacity: .95;
+}
+
+/* subtle tint + border shift to suggest interactivity */
+.card--module{
+  border-color: rgba(var(--m-accent-rgb), .22);
+  background:
+    radial-gradient(700px 260px at 20% 0%, rgba(var(--m-accent-rgb), .14), transparent 55%),
+    rgba(18,24,38,.60);
+}
+
+.card--module:hover{
+  transform: translateY(-4px);
+  border-color: rgba(var(--m-accent-rgb), .32);
+  box-shadow: 0 12px 40px rgba(0,0,0,.28), 0 0 0 1px rgba(var(--m-accent-rgb), .12);
+}
+
+.card--module:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(var(--m-accent2-rgb), .28), var(--shadow2);
+}
+
+.card--module .tag{
+  background: rgba(var(--m-accent-rgb), .10);
+  border-color: rgba(var(--m-accent-rgb), .18);
+}
+
+.card__head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.card__cta{
+  font-weight: 900;
+  font-size: .92rem;
+  color: rgba(230,237,243,.92);
+  opacity: .85;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(var(--m-accent-rgb), .14);
+  border: 1px solid rgba(var(--m-accent-rgb), .22);
+  transition: transform var(--t) var(--ease), opacity var(--t) var(--ease);
+}
+
+.card--module:hover .card__cta{
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* per-module colors (fixed identity, independent of page theme) */
+.card--module[data-module="sessions"]{
+  --m-accent: #f59e0b; --m-accent2:#fbbf24;
+  --m-accent-rgb:245,158,11; --m-accent2-rgb:251,191,36;
+}
+.card--module[data-module="rules"]{
+  --m-accent:#3b82f6; --m-accent2:#60a5fa;
+  --m-accent-rgb:59,130,246; --m-accent2-rgb:96,165,250;
+}
+.card--module[data-module="world"]{
+  --m-accent:#22c55e; --m-accent2:#4ade80;
+  --m-accent-rgb:34,197,94; --m-accent2-rgb:74,222,128;
+}
+.card--module[data-module="gm"]{
+  --m-accent:#ef4444; --m-accent2:#f87171;
+  --m-accent-rgb:239,68,68; --m-accent2-rgb:248,113,113;
+}
