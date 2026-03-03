@@ -13,18 +13,14 @@
   <meta property="og:url" content="https://arae.netlify.app/" />
   <meta name="theme-color" content="#0b0f14" />
 
-  <!-- Favicon (optionnel)
-  <link rel="icon" href="/favicon.ico" />
-  -->
-
-  <link rel="stylesheet" href="/css/tokens.css" />
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/layout.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <link rel="stylesheet" href="/css/utilities.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
 </head>
 
-<body>
+<body data-theme="violet">
   <a class="skip-link" href="#content">Aller au contenu</a>
 
   <header class="topbar" data-elevate>
@@ -45,14 +41,21 @@
         <a class="nav__link nav__link--cta" href="#beta">Bêta</a>
       </nav>
 
-      <button class="navbtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-navbtn>
+      <button
+        class="navbtn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        data-navbtn
+      >
         <span class="navbtn__bar"></span>
         <span class="navbtn__bar"></span>
         <span class="navbtn__bar"></span>
       </button>
     </div>
 
-    <div class="mobile" data-mobile>
+    <div id="mobile-nav" class="mobile" data-mobile>
       <div class="container mobile__inner">
         <a class="mobile__link" href="#workflow">Workflow</a>
         <a class="mobile__link" href="#modules">Modules</a>
@@ -234,7 +237,7 @@
         </div>
 
         <div class="grid grid--modules">
-          <article class="card">
+          <a class="card card--link card--module card--sessions" href="sessions.html" aria-label="Ouvrir la page Sessions">
             <h3 class="h3">Sessions</h3>
             <p class="p">Journal + entités versionnées liées à la progression.</p>
             <div class="tags">
@@ -242,9 +245,9 @@
               <span class="tag">Découvertes</span>
               <span class="tag">Notes</span>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card card--link card--module card--rules" href="regles.html" aria-label="Ouvrir la page Règles">
             <h3 class="h3">Règles</h3>
             <p class="p">Import, modification ou création de systèmes JDR (homebrew inclus).</p>
             <div class="tags">
@@ -252,9 +255,9 @@
               <span class="tag">Homebrew</span>
               <span class="tag">Accès rapide</span>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card card--link card--module card--world" href="monde.html" aria-label="Ouvrir la page Monde">
             <h3 class="h3">Monde</h3>
             <p class="p">Référentiel global et comparaison des versions issues des sessions.</p>
             <div class="tags">
@@ -262,9 +265,9 @@
               <span class="tag">Comparaison</span>
               <span class="tag">Consolidation</span>
             </div>
-          </article>
+          </a>
 
-          <article class="card">
+          <a class="card card--link card--module card--gm" href="mj.html" aria-label="Ouvrir la page MJ">
             <h3 class="h3">MJ</h3>
             <p class="p">Stat blocks, équilibrage, estimation de puissance (modifié / homebrew).</p>
             <div class="tags">
@@ -272,7 +275,7 @@
               <span class="tag">Stat blocks</span>
               <span class="tag">Analyse</span>
             </div>
-          </article>
+          </a>
         </div>
 
         <div class="callout">
@@ -395,6 +398,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
