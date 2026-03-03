@@ -416,7 +416,7 @@
 
         <div class="cta">
           <!-- TODO: remplace # par un lien de release GitHub quand l'installeur existe -->
-          <a class="btn primary" href="#suivre">Télécharger Windows (bêta)</a>
+         <a class="btn primary" href="#beta-email">Être notifié de la bêta (Windows)</a>
 
           <!-- TODO: remplace par ton repo GitHub (site ou logiciel) -->
           <a class="btn secondary" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">Voir sur GitHub</a>
@@ -440,6 +440,25 @@
   </div>
 
   <main id="contenu" class="wrap">
+    <section id="how">
+  <h2>Comment ça marche</h2>
+  <p class="sub">Un workflow simple : capturer pendant la partie, structurer après.</p>
+
+  <div class="grid">
+    <div class="card" style="grid-column: span 4;">
+      <h3>1) Créer une session</h3>
+      <p>Point de départ chronologique de l’aventure.</p>
+    </div>
+    <div class="card" style="grid-column: span 4;">
+      <h3>2) Prendre des notes</h3>
+      <p>Notes mobiles pendant la session, sans casser le rythme.</p>
+    </div>
+    <div class="card" style="grid-column: span 4;">
+      <h3>3) Distribuer en entités</h3>
+      <p>PNJ, lieux, factions, monstres, chroniques, carte… avec versioning.</p>
+    </div>
+  </div>
+</section>
     <section id="concept">
       <h2>Concept</h2>
       <p class="sub">
@@ -571,7 +590,7 @@
 
         <form class="form" name="beta" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="beta" />
-          <input type="email" name="email" placeholder="Email" autocomplete="email" required />
+         <input id="beta-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
           <button class="btn primary" type="submit">Recevoir une alerte</button>
         </form>
 
