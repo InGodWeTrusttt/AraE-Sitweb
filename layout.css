@@ -62,3 +62,13 @@
 @media (max-width: 940px){
   .split{ grid-template-columns: 1fr; }
 }
+
+.grid--modules{
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 940px){
+  .grid--modules{
+    grid-template-columns: 1fr;
+  }
+}
