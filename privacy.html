@@ -5,38 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AraE — Politique de confidentialité</title>
   <meta name="description" content="Politique de confidentialité AraE : collecte email bêta, finalité, durée, suppression." />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://arae.netlify.app/privacy.html" />
-<link rel="stylesheet" href="css/tokens.css" />
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/layout.css" />
-<link rel="stylesheet" href="css/components.css" />
-<link rel="stylesheet" href="css/utilities.css" />
+
+  <!-- Styles (mêmes fichiers que index.html) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
 </head>
-<body>
-  <main class="container" style="padding: 48px 0;">
-    <h1>Politique de confidentialité</h1>
 
-    <h2>Données collectées</h2>
-    <p>Nous collectons uniquement l’adresse email soumise via le formulaire “Recevoir une alerte”.</p>
+<body data-theme="violet">
+  <a class="skip-link" href="#content">Aller au contenu</a>
 
-    <h2>Finalité</h2>
-    <p>Cette adresse est utilisée exclusivement pour notifier les releases importantes de la bêta AraE (Windows).</p>
+  <header class="topbar" data-elevate>
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html#top" aria-label="AraE">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__text">
+          <span class="brand__name">AraE</span>
+          <span class="brand__meta">Journal JDR</span>
+        </span>
+      </a>
 
-    <h2>Base légale</h2>
-    <p>Consentement (formulaire volontaire).</p>
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="index.html#workflow">Workflow</a>
+        <a class="nav__link" href="index.html#modules">Modules</a>
+        <a class="nav__link" href="index.html#installation">Installation</a>
+        <a class="nav__link" href="index.html#faq">FAQ</a>
+        <a class="nav__link nav__link--cta" href="index.html#beta">Bêta</a>
+      </nav>
+    </div>
+  </header>
 
-    <h2>Durée de conservation</h2>
-    <p>Jusqu’à désinscription ou suppression sur demande.</p>
+  <main id="content" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h1 class="h2">Politique de confidentialité</h1>
+        <p class="sub">Collecte minimale, usage strictement limité aux notifications de release.</p>
+      </div>
 
-    <h2>Partage</h2>
-    <p>Aucune vente, aucun partage à des tiers à des fins marketing.</p>
+      <div class="card" style="padding: 20px;">
+        <h2 class="h3">Données collectées</h2>
+        <p class="p">Nous collectons uniquement l’adresse email soumise via le formulaire “Recevoir une alerte”.</p>
 
-    <h2>Suppression / droits</h2>
-    <p>Pour demander suppression ou modification : réponds au dernier email reçu ou contacte le support indiqué dans les communications.</p>
+        <h2 class="h3">Finalité</h2>
+        <p class="p">Cette adresse est utilisée exclusivement pour notifier les releases importantes de la bêta AraE (Windows).</p>
 
-    <p style="margin-top: 32px;">
-      <a href="index.html">← Retour</a>
-    </p>
+        <h2 class="h3">Base légale</h2>
+        <p class="p">Consentement (formulaire volontaire).</p>
+
+        <h2 class="h3">Durée de conservation</h2>
+        <p class="p">Jusqu’à désinscription ou suppression sur demande.</p>
+
+        <h2 class="h3">Partage</h2>
+        <p class="p">Aucune vente, aucun partage à des tiers à des fins marketing.</p>
+
+        <h2 class="h3">Suppression / droits</h2>
+        <p class="p">
+          Pour demander suppression ou modification : réponds au dernier email reçu ou contacte le support indiqué dans les communications.
+        </p>
+
+        <p style="margin-top: 16px;">
+          <a class="btn btn--secondary" href="index.html#beta">
+            ← Retour
+          </a>
+        </p>
+      </div>
+
+      <div class="footlinks" style="margin-top: 20px;">
+        <a class="link" href="index.html#top">Accueil</a>
+        <span class="dot" aria-hidden="true">•</span>
+        <a class="link" href="index.html#beta">Bêta</a>
+        <span class="dot" aria-hidden="true">•</span>
+        <a class="link" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">AraE</div>
+        <div class="footer__meta">© 2026 — Journal numérique interactif JDR</div>
+      </div>
+      <div class="footer__right">
+        <a class="link" href="privacy.html">Confidentialité</a>
+        <a class="link" href="index.html#top">Haut</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
