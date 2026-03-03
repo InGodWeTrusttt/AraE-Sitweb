@@ -7,375 +7,13 @@
   <title>AraE — Journal numérique interactif pour campagnes JDR</title>
   <meta name="description" content="AraE est un journal numérique interactif pour suivre des campagnes JDR. Notes en session, structuration après, modules Sessions / Monde / Règles / MJ." />
 
-  <!-- Open Graph (partage) -->
   <meta property="og:title" content="AraE — Journal numérique interactif JDR" />
   <meta property="og:description" content="Notes en session, structuration après. Sessions / Monde / Règles / MJ." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://arae.netlify.app/" />
-  <!-- TODO: ajoute une image réelle (1200x630) et décommente -->
-  <!-- <meta property="og:image" content="https://arae.netlify.app/og-image.png" /> -->
 
   <meta name="theme-color" content="#0e1117" />
-
-  <!-- TODO: ajoute /favicon.ico si tu veux -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
-
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --surface:#0e1117;
-      --card:#121826;
-      --border:#243042;
-      --text:#e6edf3;
-      --muted:#9aa7b5;
-      --accent:#3b82f6;
-      --accent2:#60a5fa;
-
-      --radius:14px;
-      --shadow: 0 12px 40px rgba(0,0,0,.35);
-      --max: 1120px;
-
-      --focus: 0 0 0 3px rgba(96,165,250,.35);
-    }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    @media (prefers-reduced-motion: reduce){
-      html{ scroll-behavior:auto; }
-    }
-
-    body{
-      margin:0;
-      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,system-ui,Arial,sans-serif;
-      background: radial-gradient(1200px 600px at 50% -100px, rgba(59,130,246,.18), transparent 60%),
-                  radial-gradient(800px 500px at 80% 0px, rgba(96,165,250,.12), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{ color: inherit; }
-    a:focus-visible, button:focus-visible, input:focus-visible{
-      outline:none;
-      box-shadow: var(--focus);
-      border-radius: 10px;
-    }
-
-    .skip-link{
-      position:absolute;
-      left:-999px;
-      top:12px;
-      background: var(--accent);
-      color:white;
-      padding:10px 12px;
-      border-radius:10px;
-      z-index:9999;
-    }
-    .skip-link:focus{ left:12px; }
-
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header{
-      position: sticky;
-      top:0;
-      z-index:50;
-      background: rgba(11,15,20,.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(36,48,66,.5);
-    }
-
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:baseline;
-      gap:10px;
-      text-decoration:none;
-      font-weight:700;
-      letter-spacing:.2px;
-    }
-    .brand small{
-      font-weight:600;
-      color: var(--muted);
-      letter-spacing:0;
-    }
-
-    nav ul{
-      margin:0;
-      padding:0;
-      list-style:none;
-      display:flex;
-      gap: 18px;
-      align-items:center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    nav a{
-      text-decoration:none;
-      color: var(--muted);
-      font-weight:600;
-      font-size: .95rem;
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover{ color: var(--text); background: rgba(255,255,255,.04); }
-
-    .hero{
-      padding: 84px 0 36px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-    }
-
-    h1{
-      font-size: clamp(2.2rem, 3.6vw, 3.2rem);
-      line-height:1.15;
-      margin: 0 0 14px;
-      letter-spacing: -0.6px;
-    }
-
-    .lead{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 62ch;
-    }
-
-    .pillrow{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin: 0 0 18px;
-    }
-    .pill{
-      border: 1px solid rgba(36,48,66,.7);
-      background: rgba(18,24,38,.6);
-      color: var(--muted);
-      padding: 8px 10px;
-      border-radius: 999px;
-      font-size: .92rem;
-    }
-
-    .cta{
-      display:flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      text-decoration:none;
-      font-weight: 700;
-      border: 1px solid transparent;
-      cursor: pointer;
-    }
-    .btn.primary{
-      background: linear-gradient(180deg, var(--accent2), var(--accent));
-      color: white;
-      box-shadow: 0 10px 30px rgba(59,130,246,.25);
-    }
-    .btn.primary:hover{ filter: brightness(1.03); }
-
-    .btn.secondary{
-      background: rgba(18,24,38,.75);
-      border-color: rgba(36,48,66,.8);
-      color: var(--text);
-    }
-    .btn.secondary:hover{ background: rgba(18,24,38,.95); }
-
-    .note{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .panel{
-      background: rgba(18,24,38,.65);
-      border: 1px solid rgba(36,48,66,.75);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .shot{
-      aspect-ratio: 16 / 10;
-      background:
-        radial-gradient(600px 220px at 20% 10%, rgba(59,130,246,.22), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)),
-        rgba(18,24,38,.8);
-      border-bottom: 1px solid rgba(36,48,66,.75);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 16px;
-      color: var(--muted);
-      text-align:center;
-      font-weight: 650;
-    }
-    .shot small{ display:block; font-weight:600; margin-top:6px; color: rgba(154,167,181,.9); }
-
-    .panel-body{
-      padding: 16px 18px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    main{
-      padding: 20px 0 76px;
-    }
-
-    section{
-      padding: 54px 0;
-      border-top: 1px solid rgba(36,48,66,.35);
-    }
-    section:first-of-type{ border-top: none; }
-
-    h2{
-      margin: 0 0 12px;
-      font-size: 1.6rem;
-      letter-spacing:-0.2px;
-    }
-
-    .sub{
-      margin: 0 0 22px;
-      color: var(--muted);
-      max-width: 78ch;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .card{
-      grid-column: span 6;
-      background: rgba(18,24,38,.6);
-      border: 1px solid rgba(36,48,66,.75);
-      border-radius: var(--radius);
-      padding: 18px;
-    }
-    @media (max-width: 900px){
-      .card{ grid-column: span 12; }
-    }
-
-    .card h3{
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      letter-spacing: -0.2px;
-    }
-    .card p{ margin: 0; color: var(--muted); }
-
-    .kpi{
-      display:flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .tag{
-      font-size: .85rem;
-      color: rgba(230,237,243,.9);
-      background: rgba(59,130,246,.10);
-      border: 1px solid rgba(59,130,246,.22);
-      padding: 6px 8px;
-      border-radius: 999px;
-    }
-
-    .cols{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    @media (max-width: 900px){
-      .cols{ grid-template-columns: 1fr; }
-    }
-
-    ol{
-      margin: 10px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-    li{ margin: 8px 0; }
-
-    details{
-      background: rgba(18,24,38,.55);
-      border: 1px solid rgba(36,48,66,.75);
-      border-radius: var(--radius);
-      padding: 14px 16px;
-    }
-    details + details{ margin-top: 12px; }
-    summary{
-      cursor:pointer;
-      color: var(--text);
-      font-weight: 650;
-    }
-    details p{ margin: 10px 0 0; color: var(--muted); }
-
-    .form{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-    input[type="email"]{
-      flex: 1 1 260px;
-      min-width: 240px;
-      padding: 12px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(36,48,66,.9);
-      background: rgba(11,15,20,.55);
-      color: var(--text);
-    }
-    input::placeholder{ color: rgba(154,167,181,.75); }
-
-    footer{
-      border-top: 1px solid rgba(36,48,66,.5);
-      padding: 28px 0 42px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
-    .foot{
-      display:flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .foot a{
-      color: var(--muted);
-      text-decoration:none;
-      padding: 6px 8px;
-      border-radius: 10px;
-    }
-    .foot a:hover{ color: var(--text); background: rgba(255,255,255,.04); }
-  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
@@ -386,14 +24,13 @@
       <a class="brand" href="#top" aria-label="AraE">
         AraE <small>Journal JDR</small>
       </a>
-
       <nav aria-label="Navigation principale">
         <ul>
-          <li><a href="#concept">Concept</a></li>
+          <li><a href="#how">Workflow</a></li>
           <li><a href="#modules">Modules</a></li>
           <li><a href="#installation">Installation</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="#suivre">Suivre</a></li>
+          <li><a href="#suivre">Bêta</a></li>
         </ul>
       </nav>
     </div>
@@ -402,212 +39,157 @@
   <div id="top" class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="pillrow" aria-label="Badges">
-          <div class="pill">Windows (bêta)</div>
+        <div class="pillrow">
+          <div class="pill">Windows (alpha)</div>
           <div class="pill">Joueurs & MJ</div>
-          <div class="pill">Notes → Entités structurées</div>
+          <div class="pill">Session → Structuration</div>
         </div>
 
         <h1>AraE — le journal numérique pour suivre une campagne JDR</h1>
         <p class="lead">
-          Pendant la session : tu notes. Après la session : tu distribues l’information en PNJ, lieux, factions, monstres, chroniques…
-          avec une séparation claire entre <strong>Session</strong> (ce qui est connu à l’instant T) et <strong>Monde</strong> (référentiel global).
+          Pendant la session : tu notes. Après la session : tu distribues l’information en PNJ, lieux, factions, monstres et chroniques,
+          avec séparation claire entre <strong>Session</strong> (connaissance instant T) et <strong>Monde</strong> (référentiel global).
         </p>
 
         <div class="cta">
-          <!-- TODO: remplace # par un lien de release GitHub quand l'installeur existe -->
-         <a class="btn primary" href="#beta-email">Être notifié de la bêta (Windows)</a>
-
-          <!-- TODO: remplace par ton repo GitHub (site ou logiciel) -->
+          <a class="btn primary" href="#beta-email">Être notifié de la bêta (Windows)</a>
           <a class="btn secondary" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">Voir sur GitHub</a>
         </div>
 
         <div class="note">
-          Objectif : information claire, installation simple, et workflow “session → structuration” sans friction.
+          Pas de spam. Notification uniquement lors des releases importantes.
         </div>
       </div>
 
-      <aside class="panel" aria-label="Aperçu produit">
+      <aside class="panel">
         <div class="shot">
           Capture d’écran à ajouter
-          <small>Conseillé : 1600×1000, format 16:10</small>
+          <small>Format recommandé : 1600×1000</small>
         </div>
         <div class="panel-body">
-          Ajoute une capture réelle dès que possible : c’est le plus gros levier de crédibilité sur une landing.
+          Une capture produit augmentera fortement la crédibilité.
         </div>
       </aside>
     </div>
   </div>
 
   <main id="contenu" class="wrap">
+
     <section id="how">
-  <h2>Comment ça marche</h2>
-  <p class="sub">Un workflow simple : capturer pendant la partie, structurer après.</p>
-
-  <div class="grid">
-    <div class="card" style="grid-column: span 4;">
-      <h3>1) Créer une session</h3>
-      <p>Point de départ chronologique de l’aventure.</p>
-    </div>
-    <div class="card" style="grid-column: span 4;">
-      <h3>2) Prendre des notes</h3>
-      <p>Notes mobiles pendant la session, sans casser le rythme.</p>
-    </div>
-    <div class="card" style="grid-column: span 4;">
-      <h3>3) Distribuer en entités</h3>
-      <p>PNJ, lieux, factions, monstres, chroniques, carte… avec versioning.</p>
-    </div>
-  </div>
-</section>
-    <section id="concept">
-      <h2>Concept</h2>
-      <p class="sub">
-        AraE est pensé pour coller à la réalité d’une campagne : l’information arrive en session, puis se consolide après.
-      </p>
-
-      <div class="cols">
-        <div class="card">
-          <h3>Session = connaissance à l’instant T</h3>
-          <p>Tu crées une session, prends des notes, puis tu convertis ce que tu as appris en entités versionnées (timeline de découverte).</p>
-          <div class="kpi">
-            <span class="tag">Notes mobiles</span>
-            <span class="tag">Entités versionnées</span>
-            <span class="tag">Suivi chronologique</span>
-          </div>
+      <h2>Comment ça marche</h2>
+      <p class="sub">Un workflow simple et structuré.</p>
+      <div class="grid">
+        <div class="card span-4">
+          <h3>1) Créer une session</h3>
+          <p>Point de départ chronologique de l’aventure.</p>
         </div>
-
-        <div class="card">
-          <h3>Monde = référentiel global</h3>
-          <p>Base globale non versionnée + récupération et comparaison des versions issues des sessions (lecture “macro” du monde).</p>
-          <div class="kpi">
-            <span class="tag">Référentiel</span>
-            <span class="tag">Comparaison</span>
-            <span class="tag">Vue d’ensemble</span>
-          </div>
+        <div class="card span-4">
+          <h3>2) Prendre des notes</h3>
+          <p>Notes mobiles pendant la partie, sans casser le rythme.</p>
+        </div>
+        <div class="card span-4">
+          <h3>3) Structurer</h3>
+          <p>Distribution en entités versionnées et référentiel monde.</p>
         </div>
       </div>
     </section>
 
     <section id="modules">
       <h2>Les 4 modules</h2>
-      <p class="sub">Un point d’entrée clair selon ton rôle et ton besoin.</p>
+      <p class="sub">Organisation claire selon rôle et besoin.</p>
 
       <div class="grid">
-        <div class="card" style="grid-column: span 6;">
+        <div class="card span-6">
           <h3>Sessions</h3>
-          <p>Journal et modules de saisie : tu captures, puis tu structures (PNJ, lieux, factions, monstres…).</p>
-          <div class="kpi">
-            <span class="tag">Workflow session</span><span class="tag">Versioning</span>
-          </div>
+          <p>Journal + entités versionnées liées à la chronologie.</p>
         </div>
-
-        <div class="card" style="grid-column: span 6;">
+        <div class="card span-6">
           <h3>Règles</h3>
-          <p>Importer, modifier ou créer un système JDR (D&D, Souls-like, homebrew), avec accès rapide en jeu.</p>
-          <div class="kpi">
-            <span class="tag">Import</span><span class="tag">Homebrew</span><span class="tag">Accès rapide</span>
-          </div>
+          <p>Import, modification ou création complète de systèmes JDR.</p>
         </div>
-
-        <div class="card" style="grid-column: span 6;">
+        <div class="card span-6">
           <h3>Monde</h3>
-          <p>Créer des entités non versionnées et comparer l’historique issu des sessions pour analyser l’évolution.</p>
-          <div class="kpi">
-            <span class="tag">Référentiel</span><span class="tag">Comparaison</span>
-          </div>
+          <p>Référentiel global et comparaison inter-sessions.</p>
         </div>
-
-        <div class="card" style="grid-column: span 6;">
+        <div class="card span-6">
           <h3>MJ</h3>
-          <p>Outils d’équilibrage : stat blocks, comparaisons, estimation de puissance pour du contenu modifié / homebrew.</p>
-          <div class="kpi">
-            <span class="tag">Équilibrage</span><span class="tag">Stat blocks</span><span class="tag">Puissance</span>
-          </div>
+          <p>Stat blocks, équilibrage et estimation de puissance.</p>
         </div>
       </div>
 
-      <div style="margin-top:16px" class="card">
-        <h3>Entités et outils disponibles</h3>
-        <p>PNJ, Monstres, Religions, Factions, Lieux, Notes, Chronique, et <strong>Carte</strong> (map importée + tokens de quête/creature/PNJ, routes mesurables, zones d’influence, annotations).</p>
+      <div class="card span-12">
+        <h3>Entités disponibles</h3>
+        <p>
+          PNJ, Monstres, Religions, Factions, Lieux, Notes, Chronique,
+          et <strong>Carte</strong> (tokens, tracés mesurables, zones d’influence, annotations).
+        </p>
       </div>
     </section>
 
     <section id="installation">
       <h2>Installation Windows</h2>
-      <p class="sub">Objectif : installation en quelques étapes, sans ambiguïté.</p>
+      <p class="sub">Processus clair et minimal.</p>
 
       <div class="cols">
         <div class="card">
           <h3>Étapes</h3>
           <ol>
-            <li>Télécharger l’installeur (lien “Release” GitHub recommandé).</li>
-            <li>Exécuter le fichier (.exe ou .msi).</li>
+            <li>Télécharger l’installeur (GitHub Releases recommandé).</li>
+            <li>Exécuter le fichier (.exe / .msi).</li>
             <li>Lancer AraE.</li>
           </ol>
         </div>
 
         <div class="card">
-          <h3>Distribution (recommandée)</h3>
-          <p>
-            Publier l’installeur via <strong>GitHub Releases</strong> permet un lien stable “dernière version”, un changelog clair, et une distribution fiable.
-          </p>
+          <h3>Distribution</h3>
+          <p>GitHub Releases garantit versioning clair et traçabilité.</p>
         </div>
       </div>
     </section>
 
     <section id="faq">
       <h2>FAQ</h2>
-      <p class="sub">Réponses rapides aux questions qui bloquent souvent l’adoption.</p>
-
       <details>
-        <summary>AraE est-il plutôt pour joueurs ou MJ ?</summary>
-        <p>Les deux : Sessions/Monde/Règles servent à tout le monde ; MJ ajoute des outils dédiés (équilibrage, stat blocks, estimation de puissance).</p>
+        <summary>Session vs Monde ?</summary>
+        <p>Session = versionnée et chronologique. Monde = base globale consolidée.</p>
       </details>
 
       <details>
-        <summary>Quelle est la différence Session vs Monde ?</summary>
-        <p>Session = ce que le groupe sait à un instant donné (versionné). Monde = référentiel global et comparaison des versions issues des sessions.</p>
+        <summary>Données stockées où ?</summary>
+        <p>Stockage local. Synchronisation future possible.</p>
       </details>
 
       <details>
-        <summary>Quels OS sont supportés ?</summary>
-        <p>Windows en premier. Les autres plateformes viendront ensuite selon la maturité et la demande.</p>
+        <summary>Support OS ?</summary>
+        <p>Windows d’abord. Extensions futures selon maturité.</p>
       </details>
     </section>
 
     <section id="suivre">
       <h2>Suivre la bêta</h2>
-      <p class="sub">
-        Tant que l’installeur n’est pas publié, le meilleur CTA n’est pas un faux “Download”, mais un suivi clair : GitHub + notifications.
-      </p>
-
-      <!-- Option A: Netlify Forms (sans backend).
-           Dans Netlify, après 1er déploiement avec ce form, tu verras "Forms" dans le dashboard.
-      -->
       <div class="card">
-        <h3>Être notifié</h3>
-        <p>Inscription email (Netlify Forms). Pas de spam : uniquement bêta / release.</p>
-
-        <form class="form" name="beta" method="POST" data-netlify="true">
+        <form class="form" name="beta" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="beta" />
-         <input id="beta-email" type="email" name="email" placeholder="Email" autocomplete="email" required />
+          <p style="display:none">
+            <label>Ne pas remplir: <input name="bot-field" /></label>
+          </p>
+          <input id="beta-email" type="email" name="email" placeholder="Email" required />
           <button class="btn primary" type="submit">Recevoir une alerte</button>
         </form>
-
-        <p class="note">Alternative : remplace cette section par un simple lien GitHub si tu ne veux pas collecter d’emails.</p>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="wrap foot">
       <div>© 2026 AraE</div>
       <div>
-        <!-- TODO: mets tes vrais liens -->
-        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-        <a href="#top">Haut de page</a>
+        <a href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
+        <a href="#top">Haut</a>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
