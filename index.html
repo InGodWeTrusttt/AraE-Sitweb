@@ -1,0 +1,142 @@
+in<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AraE — Journal Numérique JDR</title>
+
+<style>
+:root {
+  --bg: #0e1117;
+  --card: #161b22;
+  --border: #252b36;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #3b82f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+p { color: var(--muted); }
+
+.hero {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="container">
+    <h1>AraE</h1>
+    <p>Journal numérique interactif pour suivre vos campagnes de jeu de rôle.</p>
+    <a class="btn" href="#">Télécharger pour Windows (bientôt)</a>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Concept</h2>
+  <p>Notez pendant la session. Structurez après. AraE sépare ce qui est découvert en session de ce qui appartient au monde global.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Sessions</h3>
+      <p>Suivi chronologique des événements et découverte progressive du monde.</p>
+    </div>
+
+    <div class="card">
+      <h3>Monde</h3>
+      <p>Base globale des entités non versionnées et comparaison historique.</p>
+    </div>
+
+    <div class="card">
+      <h3>Règles</h3>
+      <p>Import, modification ou création de systèmes JDR complets.</p>
+    </div>
+
+    <div class="card">
+      <h3>MJ</h3>
+      <p>Création de stat blocks, équilibrage et estimation de puissance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Modules disponibles</h2>
+  <p>PNJ, Monstres, Religions, Factions, Lieux, Notes, Carte interactive, Chronique.</p>
+</section>
+
+<section class="container">
+  <h2>Installation</h2>
+  <p>
+    1. Télécharger l’installeur Windows<br>
+    2. Exécuter le fichier<br>
+    3. Lancer AraE
+  </p>
+</section>
+
+<div class="footer">
+  © 2026 AraE
+</div>
+
+</body>
+</html>
