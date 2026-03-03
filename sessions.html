@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AraE — Sessions</title>
+  <meta name="description" content="Module Sessions : notes en session, entités versionnées, découverte progressive et distribution post-partie." />
+  <meta name="theme-color" content="#0b0f14" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+</head>
+<body data-theme="orange">
+  <a class="skip-link" href="#content">Aller au contenu</a>
+
+  <header class="topbar" data-elevate>
+    <div class="container topbar__inner">
+      <a class="brand" href="/" aria-label="AraE">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__text">
+          <span class="brand__name">AraE</span>
+          <span class="brand__meta">Sessions</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="/">Accueil</a>
+        <a class="nav__link nav__link--cta" href="/#beta">Bêta</a>
+      </nav>
+
+      <button class="navbtn" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav" data-navbtn>
+        <span class="navbtn__bar"></span><span class="navbtn__bar"></span><span class="navbtn__bar"></span>
+      </button>
+    </div>
+
+    <div id="mobile-nav" class="mobile" data-mobile>
+      <div class="container mobile__inner">
+        <a class="mobile__link" href="/">Accueil</a>
+        <a class="mobile__link mobile__link--cta" href="/#beta">Bêta (Windows)</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero hero--module">
+      <div class="container">
+        <div class="badges" aria-label="Badges">
+          <span class="badge">Sessions</span>
+          <span class="badge">Découverte progressive</span>
+          <span class="badge">Versioning</span>
+        </div>
+
+        <h1 class="hero__title">Sessions — capter en jeu, structurer après</h1>
+        <p class="hero__lead">
+          Le module Sessions est le cœur du workflow : tu prends des notes pendant la partie, puis tu distribues l’information en entités
+          versionnées (PNJ, lieux, factions, monstres, chroniques…).
+        </p>
+
+        <div class="video">
+          <div class="video__frame" role="img" aria-label="Emplacement vidéo : trailer Sessions (16:9)">
+            <div class="video__placeholder">
+              <div class="video__title">Trailer (à ajouter)</div>
+              <div class="video__meta">Format recommandé : 1920×1080 (16:9)</div>
+            </div>
+          </div>
+          <!-- Quand tu as la vidéo :
+          <video class="video__player" controls playsinline preload="metadata" poster="assets/sessions-poster.jpg">
+            <source src="assets/sessions-trailer.mp4" type="video/mp4" />
+          </video>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="h2">Fonctionnement</h2>
+          <p class="sub">Ce que tu sais “à l’instant T”, organisé par sessions, puis consolidé.</p>
+        </div>
+
+        <div class="steps">
+          <article class="card card--step">
+            <h3 class="h3">1) Créer une session</h3>
+            <p class="p">Chaque session représente un moment précis de la campagne.</p>
+          </article>
+          <article class="card card--step">
+            <h3 class="h3">2) Notes mobiles</h3>
+            <p class="p">Capture rapide, sans casser le rythme de la table.</p>
+          </article>
+          <article class="card card--step">
+            <h3 class="h3">3) Distribution</h3>
+            <p class="p">Transforme les notes en entités versionnées et reliées.</p>
+          </article>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <h3 class="h3">Pourquoi versionner ?</h3>
+            <p class="p">Parce que la connaissance évolue : v1 (rumeur), v2 (preuve), v3 (révélation).</p>
+            <div class="tags">
+              <span class="tag">Timeline</span>
+              <span class="tag">Découvertes</span>
+              <span class="tag">Contexte</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="h3">Ce que tu peux structurer</h3>
+            <p class="p">PNJ, monstres, lieux, factions, religions, chronique, carte et notes.</p>
+            <div class="tags">
+              <span class="tag">Entités</span>
+              <span class="tag">Liens</span>
+              <span class="tag">Organisation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout__title">Objectif</div>
+          <div class="callout__text">Rester fluide en session, puis consolider proprement après la partie.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--beta">
+      <div class="container">
+        <div class="callout">
+          <div class="callout__title">Accès bêta</div>
+          <div class="callout__text">
+            Reviens sur l’accueil pour t’inscrire et être notifié dès qu’une release Windows installable est publiée.
+          </div>
+          <div style="margin-top:12px;">
+            <a class="btn btn--primary" href="/#beta">Aller à la bêta</a>
+            <a class="btn btn--secondary" href="/">Retour accueil</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">AraE</div>
+        <div class="footer__meta">© 2026 — Sessions</div>
+      </div>
+      <div class="footer__right">
+        <a class="link" href="https://github.com/InGodWeTrusttt/AraE-Sitweb/" target="_blank" rel="noopener">GitHub</a>
+        <a class="link" href="/">Accueil</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
